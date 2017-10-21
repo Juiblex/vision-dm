@@ -1,0 +1,30 @@
+function m_gradeHW6(andrewID)
+
+%submission directory:
+baseDir = 'D:\Study\CV16720_TA\HWs\HW6_writeup\submission\hw6\';
+dataDir = 'D:\Study\CV16720_TA\HWs\HW6\data\';
+
+% load 8 results images
+imNames = {'man', 'star', 'sheep', 'hat'};
+
+nR = 2; nC = 2;
+figure(1); clf;
+for i=1:length(imNames)
+    im = imread([baseDir, andrewID, '/', imNames{i}, '_labels.png']);
+    subplot(nR, nC, i); imshow(im);
+end;
+
+figure(2); clf;
+for i=1:length(imNames)
+    im = imread([baseDir, andrewID, '/', imNames{i}, '_peaks.png']);
+    subplot(nR, nC, i); imshow(im);
+end;
+
+figure(3); clf;
+for i=1:3
+    fprintf('number of clusters for testdata%d.mat is %d\n', i, 
+    load([dataDir, '/', sprintf('testdata%d.mat', i)]); 
+    rslt = load([baseDir, andrewID, '/', sprintf('results%d.mat', i)]); 
+    subplot(nR, nC, i); plot3dclusters(data, rslt.labels, rslt.peaks);
+end;
+    

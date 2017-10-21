@@ -1,0 +1,28 @@
+This assignment is about computing the essential matrix F associated
+with n correspondences from the "house" data shown in class.
+
+You can use the function readdata.m to read the data points by doing:
+[points1,points2, edges]=readdata;
+
+The columns of points1 and points2 with the same index should now
+contain the image coordinates (u1,v1) and (u2,v2) of matching points
+in the two images.
+
+The variable edges will contain the house edges that may be useful for
+display. For example, to display the points of points1 together with
+the corresponding edges, do:
+plot2dedges(points1,edges);
+
+Now what you have to do:
+
+1) Compute the fundamental matrix F directly from these points using
+homogeneous linear least-squares; report the mean distance between the
+points and the corresponding epipolar lines.
+
+2) Write a function, that given F, draws the epipolar lines associated
+with the points from points2, and overlays them on the points from
+points1, drawn using plot2dedges.  Do the same switching the roles of
+points1 and points2. Include the plots in  your report.
+
+3) Do the same thing using the Harltley normalization (computation of
+F and of the mean distance, plus plots).

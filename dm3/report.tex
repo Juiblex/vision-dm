@@ -1,0 +1,31 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage{listings}
+\usepackage{placeins}
+\usepackage{subcaption}
+\usepackage{array}
+\usepackage[justification=centering]{caption}
+
+\author{Théotime Grohens}
+\title{Introduction to Computer Vision: \\ Assignment 3: Mean-shift}
+
+\begin{document}
+
+\maketitle
+
+\section*{Question 3}
+
+Decreasing $r$ increases the runtime of the program, since there are more different peaks to be reached and hence more paths to be computed.
+Increasing $c$ causes less points to be incorporated into existing search paths, and so increases the runtime as well.
+
+As for the visual quality of the images, smaller values of $r$ yield more peaks and thus more different colors, whereas higher values of $r$ diminish the number of different images, and might even yield only one single peak, which completely destroys the image (as in the sheep images for $r$=20).
+Changing $c$ affects the peak to which each point maps; higher values of $c$ merge less points, and make the image crisper.
+
+\end{document}
